@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання №1</title>
+</head>
+
+<body>
+    <h1 style="text-align: center; margin-top: 23%;">
+        Обновіть сторінку, щоб спробувати ще раз.
+    </h1>
+    <!-- Script -->
+    <script>
+        setTimeout(() => {
+            for (let i = 0; i < 1; i++) {
+                let num = +prompt("Введіть число:");
+
+                if (isNaN(num) || num == null || num == '') {
+                    i--;
+                } else {
+                    alert(`${num} --- ${fibonacci(num)}`);
+                }
+            }
+        }, 1000);
+
+        // повертає n-е число Фібоначі
+        function fibonacci(n) {
+            return n <= 1 ? n : fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання №3</title>
+</head>
+<body>
+    <h1 style="text-align: center; margin-top: 23%;">
+        Обновіть сторінку, щоб спробувати ще раз.
+    </h1>
+    <!-- Script -->
+    <script>
+        setTimeout(() => {
+            for (let i = 0; i < 1; i++) {
+                let input = prompt("Введіть розмірність масиву за зразком\n5, 7\n\nВідповідь буде записана в консоль [Cntr+shift+i => Console] або f12"),
+                    m = +input.split(', ')[0],
+                    n = +input.split(', ')[1];
+
+                if (m == '' || n == '' || m == null || n == null || isNaN(m) || isNaN(n) || n < 1 || m < 1 ||m > 20 || n > 20) {
+                    i--;
+                    console.log("Максимальне значення 'm' та 'n' може бути 20!");
+                } else {
+                    const arr = [],
+                        posArr = [],
+                        negArr = [];
+
+                    for (let i = 0; i < m * n; i++) {
+                        arr.push(random(-100, 100));
+                        (arr[i] < 0) ? negArr.push(arr[i]): posArr.push(arr[i]);
+                    }
+                    console.log(`Основний масив: ${arr}\n\nМасив з додатніми значеннями: ${posArr}\n\nМасив з від'ємними значеннями: ${negArr}`);
+                }
+            }
+        }, 1000);
+        
+
+        function random(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
+    </script>
+</body>
+</html>

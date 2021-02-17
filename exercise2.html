@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання №2</title>
+</head>
+
+<body>
+    <h1 style="text-align: center; margin-top: 23%;">
+        Обновіть сторінку, щоб спробувати ще раз.
+    </h1>
+    <!-- Script -->
+    <script>
+        setTimeout(() => {
+            for (let i = 0; i < 1; i++) {
+                let apartment = +prompt("Яку квартиру потрібно знайти?");
+
+                // перевірка на введення некоректних даних
+                if (isNaN(apartment) || apartment == null || apartment == '' || apartment < 1 || apartment > 300) {
+                    i--;
+                } else {
+                    let floor = Math.ceil(apartment / 3),
+                        message = `Квартира: ${apartment}\nПоверх: ${floor}`;
+
+                    if (floor % 2 != 0) {
+                        alert(message);
+                    } else {
+                        message += `\nЛіфт працює некоректно, оберіть ${floor + 1} і спустіться нижче`;
+                        alert(message);
+                    }
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

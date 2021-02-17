@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання №4</title>
+</head>
+<body>
+    <h1 style="text-align: center; margin-top: 23%;">
+        Обновіть сторінку, щоб спробувати ще раз.
+    </h1>
+    <!-- Script -->
+    <script>
+        // розклад
+        const timetable = [{
+                name: 'Ecology',
+                day: 'Monday',
+                cabinet: 210,
+                groups: 'IT-92',
+                time: '10:00'
+            },
+            {
+                name: 'Ecology',
+                day: 'Monday',
+                cabinet: 210,
+                groups: 'IT-94',
+                time: '12:00'
+            },
+            {
+                name: 'Node JS',
+                day: 'Tuesday',
+                cabinet: 108,
+                groups: 'IT-92',
+                time: '08:00'
+            },
+            {
+                name: 'Node JS',
+                day: 'Tuesday',
+                cabinet: 108,
+                groups: 'IT-94',
+                time: '12:00'
+            },
+            {
+                name: 'Data Science',
+                day: 'Wednesday',
+                cabinet: 314,
+                groups: 'IT-92',
+                time: '12:00'
+            },
+            {
+                name: 'Data Science',
+                day: 'Wednesday',
+                cabinet: 314,
+                groups: 'IT-94',
+                time: '14:00'
+            },
+            {
+                name: 'Backend',
+                day: 'Thursday',
+                cabinet: 207,
+                groups: 'IT-92',
+                time: '14:00'
+            },
+            {
+                name: 'Backend',
+                day: 'Thursday',
+                cabinet: 207,
+                groups: 'IT-94',
+                time: '18:00'
+            },
+            {
+                name: 'Computer Network',
+                day: 'Friday',
+                cabinet: 162,
+                groups: 'IT-92',
+                time: '10:00'
+            },
+            {
+                name: 'Computer Network',
+                day: 'Friday',
+                cabinet: 162,
+                groups: 'IT-94',
+                time: '12:00'
+            },
+        ];
+
+        setTimeout(() => {
+
+            let group, day;
+            for (let i = 0; i < 1; i++) {
+                group = prompt('Введіть групу:\n( ІТ-94, ІТ-92 [EN])');
+                switch (group) {
+                    case 'IT-94':
+                        chooseDay('IT-94');
+                        break;
+                    case 'IT-92':
+                        chooseDay('IT-92');
+                        break;
+                    default:
+                        i--;
+                        break;
+                }
+            }
+
+            function chooseDay(_group) {
+                for (let i = 0; i < 1; i++) {
+                    let group = _group;
+                    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+
+                    day = prompt(`Оберіть день:\n( ${days} )`);
+                    if (days.includes(day)) {
+                        showMessage(group, day);
+                    } else {
+                        i--;
+                    }
+                }
+            }
+
+            function showMessage(_group, _day) {
+                let pairs, time, cabinet;
+                for (let i = 0; i < timetable.length; i++) {
+                    if (timetable[i].day == _day && timetable[i].groups == _group) {
+                        pairs = timetable[i].name;
+                        time = timetable[i].time;
+                        cabinet = timetable[i].cabinet;
+                    }
+                }
+                alert(`Група: ${_group}\nДень: ${day}\nПара: ${pairs}\nКабінет: ${cabinet}\nЧас: ${time}`);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

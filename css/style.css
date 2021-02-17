@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Mega', sans-serif;
+    background-color: #2a2e43;
+    color: #f0efed;
+    user-select: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 680px;
+    margin: 40px auto;
+    padding: 0 50px 50px 50px;
+    border: dashed white;
+}
+
+.container p,
+.container button {
+    font-size: 20px;
+}
+
+.exercise {
+    margin-top: 30px;
+}
+
+span {
+    font-weight: bold
+}
+
+button {
+    margin-bottom: 50px;
+    width: 150px;
+    height: 40px;
+    background-color: #ffb900;
+    color: #353a50;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+button:hover {
+    transform: scale(0.97);
+    filter: brightness(80%);
+}
